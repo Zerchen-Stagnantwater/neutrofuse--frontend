@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+:root {
+  /* Optical-instrument palette: a lens coating, not a SaaS gradient. */
+  --ink: #0d0f0e;          /* near-black with a faint green undertone, like multi-coated glass */
+  --ink-raised: #141715;    /* one step up, for cards/panels */
+  --paper: #f2f0e8;          /* warm off-white, never pure white */
+  --paper-dim: #a8a59a;       /* muted body text on dark */
+  --coat-green: #7fb069;       /* lens-coating green — primary accent */
+  --coat-green-bright: #9fd486;  /* hover/active state */
+  --aperture-gold: #c9a227;       /* aperture-ring brass — secondary accent */
+  --line: #2a2d2b;                 /* hairline dividers, warm-neutral */
+  --line-bright: #3a3d3b;
+
+  --font-family-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-family-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-family-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-raised: var(--ink-raised);
+  --color-paper: var(--paper);
+  --color-paper-dim: var(--paper-dim);
+  --color-coat-green: var(--coat-green);
+  --color-coat-green-bright: var(--coat-green-bright);
+  --color-aperture-gold: var(--aperture-gold);
+  --color-line: var(--line);
+  --color-line-bright: var(--line-bright);
+  --font-sans: var(--font-family-body);
+  --font-display: var(--font-family-display);
+  --font-mono: var(--font-family-mono);
+}
+
+body {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+/* Visible keyboard focus -- never remove this, only restyle it. */
+:focus-visible {
+  outline: 2px solid var(--coat-green);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
